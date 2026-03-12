@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-image: url('img/paper japan.jpg');
+        margin-top: 80px;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        background-image: url('img/kayu.jpg');
+        padding: 20px 20px;
+        gap: 8px;
+        justify-content: space-evenly;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        box-sizing: border-box;
+      }
+      nav a {                        
+        color: white;
+        text-decoration: none;
+        background-color: rgba(0,0,0,0.5);
+        padding: 10px 20px;
+        font-weight: bold;
+        font-family: 'Georgia', serif;
+      }
+      .logo {
+        color: white;
+        font-weight: bold;
+        font-family: 'Georgia', serif;
+        font-size: 20px;
+        margin-right: auto; 
+      }
+      .container {
+        position: relative;
+        display: inline-block;
+        margin-top: 10px;
+        width: 1520px;
+        height: 620px;
+        overflow: hidden;
+      }
+      .kotak {
+        position: absolute;
+        cursor: pointer;
+        transition: filter 0.4s;
+      }
+      .tanda-tanya {
+        position: absolute;
+        top: -35px;
+        left: 45%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 28px;
+      }
+      .keterangan {
+        display: none;
+        position: absolute;
+        top: 10px;
+        left: 45%;
+        transform: translateX(-50%);
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        white-space: nowrap;
+        font-family: 'Georgia', serif;
+        font-size: 16px;
+        z-index: 10;
+      }
+      .gelap {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0);
+        transition: background 0.4s;
+        pointer-events: none;
+      }
+      .kotak:hover img {
+        filter: brightness(2) drop-shadow(0 0 50px gold);
+      }
+      .kotak:hover .tanda-tanya {
+        display: none;
+      }
+      .kotak:hover .keterangan {
+        display: block;
+      }
+      .kotak:nth-child(2):hover ~ .gelap {
+        background: radial-gradient(ellipse 620px 380px at 440px 300px, transparent 40%, rgba(0,0,0,0.8) 70%);
+      }
+      .kotak:nth-child(3):hover ~ .gelap {
+        background: radial-gradient(ellipse 620px 380px at 1120px 300px, transparent 40%, rgba(0,0,0,0.8) 70%);
+      }
+      #home, #section-alat, #section-bahan, #section-langkah {
+        scroll-margin-top: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">ARUSHIKO.CHEF</div>
+      <a href="#home">Home</a>
+      <a href="#section-alat">Alat</a>
+      <a href="#section-bahan">Bahan</a>
+      <a href="#section-langkah">Langkah - Langkah</a>
+    </nav>
+    <div id="home" class="container">
+		
+      <img src="img/meja makan.jpg" style="width: 1520px; height: 620px; object-fit: cover; display: block;">
+		
+//Kotak 1
+      <div class="kotak" style="top: 300px; left: 150px;">
+        <a href="#section-alat">
+          <img src="img/crate.png" style="width: 600px; height: 350px;">
+        </a>
+        <div class="tanda-tanya">?</div>
+        <div class="keterangan">Alat</div>
+      </div>
+//Kotak 2
+      <div class="kotak" style="top: 300px; left: 820px;">
+        <a href="#section-bahan">
+          <img src="img/crate.png" style="width: 600px; height: 350px;">
+        </a>
+        <div class="tanda-tanya">?</div>
+        <div class="keterangan">Bahan</div>
+      </div>
+
+//Image map
+      <img src="img/Mahiru.png" usemap="#animeMap"
+        style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 680px; width: auto; z-index: 5;">
+      <map name="animeMap">
+        <area shape="rect" coords="0,380,130,580" href="https://www.w3schools.com/" target="_blank" alt="W3Schools">
+        <area shape="rect" coords="210,370,374,560" href="https://www.pnj.ac.id/" target="_blank" alt="PNJ">
+      </map>
+		
+      <div class="gelap"></div>
+    </div>
+
+    <div id="section-alat" style="text-align: center; margin: 40px 0 20px; padding: 0 40px;">
+      <p style="font-family: 'Georgia', serif; font-size: 28px; font-weight: bold; display: inline-block; background-color: rgba(0,0,0,0.6); color: white; padding: 10px 40px; border-radius: 8px; letter-spacing: 4px;">ALAT</p>
+      <table style="border-collapse: collapse; width: 100%;">
+        <tr>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/Panci.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Panci</span>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/Talenan.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Talenan</span>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/Spatula.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Spatula</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/Mangkuk.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Mangkuk</span>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/sendok.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Sendok</span>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/Pisau.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Pisau</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/Penggulung Sushi.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Penggulung Sushi</span>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/Piring.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Piring</span>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/Wajan.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Wajan</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="section-bahan" style="text-align: center; margin: 40px 0 20px; padding: 0 40px;">
+      <p style="font-family: 'Georgia', serif; font-size: 28px; font-weight: bold; display: inline-block; background-color: rgba(0,0,0,0.6); color: white; padding: 10px 40px; border-radius: 8px; letter-spacing: 4px;">BAHAN</p>
+      <table style="border-collapse: collapse; width: 100%;">
+        <tr>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/Nori.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Rumput Laut Nori</span>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/Nasi.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Nasi</span>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/Telur.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Telur</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/Wortel.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Wortel</span>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/Minyak Goreng.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Minyak Goreng</span>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%;">
+            <img src="img/Minyak Wijen.jpeg" style="width: 100%; max-width: 300px; height: 220px; object-fit: contain;"><br>
+            <span style="font-family: 'Georgia', serif; font-size: 18px;">Minyak Wijen</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="section-langkah" style="text-align: center; margin: 40px 0 20px; padding: 0 40px;">
+      <p style="font-family: 'Georgia', serif; font-size: 28px; font-weight: bold; display: inline-block; background-color: rgba(0,0,0,0.6); color: white; padding: 10px 40px; border-radius: 8px; letter-spacing: 4px;">LANGKAH - LANGKAH</p>
+      <table style="border-collapse: collapse; width: 100%; margin-top: 20px;">
+
+        <tr>
+          <td style="border: 0; padding: 20px; width: 33%; vertical-align: top;">
+            <div style="background-color: rgba(0,0,0,0.55); border-radius: 12px; padding: 24px 20px;">
+              <p style="font-family: 'Georgia', serif; font-size: 20px; font-weight: bold; color: gold; margin: 0 0 10px;">1. Siapkan Nasi</p>
+              <p style="font-family: 'Georgia', serif; font-size: 15px; color: white; margin: 0; line-height: 1.7;">Siapkan nasi yang sudah matang, tuang sedikit minyak wijen lalu aduk rata agar nasi lebih wangi dan tidak terlalu lengket. Biarkan agak dingin sebelum digunakan agar nori tidak mudah sobek.</p>
+            </div>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%; vertical-align: top;">
+            <div style="background-color: rgba(0,0,0,0.55); border-radius: 12px; padding: 24px 20px;">
+              <p style="font-family: 'Georgia', serif; font-size: 20px; font-weight: bold; color: gold; margin: 0 0 10px;">2. Siapkan Isian</p>
+              <p style="font-family: 'Georgia', serif; font-size: 15px; color: white; margin: 0; line-height: 1.7;">Kupas wortel lalu potong memanjang tipis menggunakan pisau di atas talenan. Rebus wortel di panci hingga empuk, lalu tiriskan. Goreng sosis di wajan dengan sedikit minyak hingga matang, lalu potong memanjang.</p>
+            </div>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%; vertical-align: top;">
+            <div style="background-color: rgba(0,0,0,0.55); border-radius: 12px; padding: 24px 20px;">
+              <p style="font-family: 'Georgia', serif; font-size: 20px; font-weight: bold; color: gold; margin: 0 0 10px;">3. Buat Telur Dadar</p>
+              <p style="font-family: 'Georgia', serif; font-size: 15px; color: white; margin: 0; line-height: 1.7;">Pecahkan telur ke dalam mangkuk, kocok rata. Panaskan wajan dengan sedikit minyak, tuang telur dan buat dadar tipis. Setelah matang, angkat dan potong memanjang menggunakan pisau.</p>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border: 0; padding: 20px; width: 33%; vertical-align: top;">
+            <div style="background-color: rgba(0,0,0,0.55); border-radius: 12px; padding: 24px 20px;">
+              <p style="font-family: 'Georgia', serif; font-size: 20px; font-weight: bold; color: gold; margin: 0 0 10px;">4. Siapkan Nori</p>
+              <p style="font-family: 'Georgia', serif; font-size: 15px; color: white; margin: 0; line-height: 1.7;">Letakkan penggulung sushi di atas meja, lalu taruh selembar rumput laut nori di atasnya. Pastikan sisi kasar nori menghadap ke atas agar nasi lebih mudah menempel.</p>
+            </div>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%; vertical-align: top;">
+            <div style="background-color: rgba(0,0,0,0.55); border-radius: 12px; padding: 24px 20px;">
+              <p style="font-family: 'Georgia', serif; font-size: 20px; font-weight: bold; color: gold; margin: 0 0 10px;">5. Tata Nasi & Isian</p>
+              <p style="font-family: 'Georgia', serif; font-size: 15px; color: white; margin: 0; line-height: 1.7;">Ratakan nasi di atas nori menggunakan spatula atau sendok, sisakan sekitar 2 cm di bagian ujung atas. Susun isian — telur dadar, wortel, dan sosis — secara memanjang di tengah nasi.</p>
+            </div>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%; vertical-align: top;">
+            <div style="background-color: rgba(0,0,0,0.55); border-radius: 12px; padding: 24px 20px;">
+              <p style="font-family: 'Georgia', serif; font-size: 20px; font-weight: bold; color: gold; margin: 0 0 10px;">6. Gulung Sushi</p>
+              <p style="font-family: 'Georgia', serif; font-size: 15px; color: white; margin: 0; line-height: 1.7;">Angkat ujung penggulung sushi perlahan, gulung nori ke depan dengan rapat sambil ditekan agar padat. Tekan gulungan dengan kuat agar bentuknya solid dan tidak mudah lepas.</p>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border: 0; padding: 20px; width: 33%; vertical-align: top;">
+            <div style="background-color: rgba(0,0,0,0.55); border-radius: 12px; padding: 24px 20px;">
+              <p style="font-family: 'Georgia', serif; font-size: 20px; font-weight: bold; color: gold; margin: 0 0 10px;">7. Potong Sushi</p>
+              <p style="font-family: 'Georgia', serif; font-size: 15px; color: white; margin: 0; line-height: 1.7;">Basahi pisau dengan sedikit air agar tidak lengket, lalu potong gulungan sushi menjadi 6–8 bagian dengan sekali tebas tegas di atas talenan. Hindari gerakan menggergaji agar bentuk tetap rapi.</p>
+            </div>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%; vertical-align: top;">
+            <div style="background-color: rgba(0,0,0,0.55); border-radius: 12px; padding: 24px 20px;">
+              <p style="font-family: 'Georgia', serif; font-size: 20px; font-weight: bold; color: gold; margin: 0 0 10px;">8. Sajikan</p>
+              <p style="font-family: 'Georgia', serif; font-size: 15px; color: white; margin: 0; line-height: 1.7;">Tata potongan sushi dengan rapi di atas piring saji. Sushi siap dinikmati! Bisa ditambahkan kecap asin atau saus sebagai pelengkap sesuai selera.</p>
+            </div>
+          </td>
+          <td style="border: 0; padding: 20px; width: 33%; vertical-align: top;">
+            <div style="background-color: rgba(0,0,0,0.55); border-radius: 12px; padding: 24px 20px; height: 100%;">
+              <p style="font-family: 'Georgia', serif; font-size: 20px; font-weight: bold; color: gold; margin: 0 0 10px;">💡 Tips</p>
+              <p style="font-family: 'Georgia', serif; font-size: 15px; color: white; margin: 0; line-height: 1.7;">Nasi yang terlalu panas akan membuat nori cepat sobek. Diamkan nasi sebentar sebelum digunakan. Gunakan minyak wijen secukupnya agar aroma sushi lebih autentik.</p>
+            </div>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+
+  </body>
+</html>
